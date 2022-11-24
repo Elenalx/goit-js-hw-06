@@ -6,8 +6,10 @@ function onBlur(e) {
   const inputLength = Number(input.dataset.length);
   if (input.value.length === inputLength) {
     input.classList.add("valid");
+    invalid.remove();
   } else {
     input.classList.add("invalid");
+    valid.remove();
   }
 }
 

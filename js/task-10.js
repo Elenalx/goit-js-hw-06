@@ -11,18 +11,15 @@ const refs = {
 let step = 10;
 let width = 30;
 let height = 30;
-const createBoxes = (amount) => {
-  amount = refs.input.value;
-  for (let i = 0; i < amount; i += 1){
+
+button.addEventListener("click", createBoxes);
+
+function createBoxes (value) => {
+  for (let i = 0; i < input.value; i += 1){
     const newDiv = document.createElement('div');
-    if (i = 1) {
-    newDiv.style.width = `${width +=amount * step}px`;
-    newDiv.style.height = `${height += amount * step}px`;
-    } else if (i = 0) {
-          newDiv.style.width = `${width -=amount * step}px`;
-    newDiv.style.height = `${height -= amount * step}px`;
-    }
-    newDiv.style.backgroundColor = getRandomHexColor();
+      newDiv.style.width = `${width += i * step}px`;
+      newDiv.style.height = `${height += i * step}px`;
+      newDiv.style.backgroundColor = getRandomHexColor();
     const groupEl = refs.div.append(newDiv);
   return groupEl;
   }
